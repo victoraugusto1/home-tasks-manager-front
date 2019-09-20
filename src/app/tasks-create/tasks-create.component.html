@@ -14,10 +14,10 @@
                         <label class="label-input100">AÇÃO:</label>
                         <input class="input100" name="action" [(ngModel)]="action" oninput="this.value=this.value.toUpperCase();"/>
                         <label class="label-input100">DATA VENCIMENTO:</label>
-                        <input class="input100" name="dueDate" [(ngModel)]="dueDate" oninput="this.value=this.value.toUpperCase();"/>
-                        
+                        <input class="input100" name="dueDate" [(ngModel)]="dueDate" oninput="this.value=this.value.toUpperCase();"/>
+
                         <label class="label-input100">RESPONSÁVEL:</label>
-                        <select class="input100">
+                        <select class="input100" name="assignee" [(ngModel)]="assignee">
                             <option value="0">--Ninguém--</option>
                             <option *ngFor="let user of users" value={{user.id}}>
                                 {{user.name}}
