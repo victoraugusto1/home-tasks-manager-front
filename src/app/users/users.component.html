@@ -5,6 +5,11 @@
     <body>
         <h1>Lista de Usuários</h1>
 
+        <div id="top-menu">
+            <button class="btn large" type="button" [routerLink]="['/users-create', 0]">CADASTRAR USUÁRIO</button>
+        </div>
+            
+
         <div class="content">
             <div class="content-body">
                 <div *ngFor="let user of users">
