@@ -1,0 +1,38 @@
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>{{update ? 'Editar Tarefa' : 'Cadastrar Nova Tarefa'}}</h1>
+
+        <div class="content">
+            <div class="content-body">
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="f.form.valid && save(f)" class="form">
+                    <div class="wrap-input100 validate-input bg1">
+                        <label class="label-input100">DESCRIÇÃO:</label>
+                        <input class="input100" name="subject" [(ngModel)]="subject" oninput="this.value=this.value.toUpperCase();"/>
+                        <label class="label-input100">AÇÃO:</label>
+                        <input class="input100" name="action" [(ngModel)]="action" oninput="this.value=this.value.toUpperCase();"/>
+                        <label class="label-input100">DATA VENCIMENTO:</label>
+                        <input class="input100" name="dueDate" [(ngModel)]="dueDate" oninput="this.value=this.value.toUpperCase();"/>
+                        
+                        <label class="label-input100">RESPONSÁVEL:</label>
+                        <select class="input100">
+                            <option value="0">--Ninguém--</option>
+                            <option *ngFor="let user of users" value={{user.id}}>
+                                {{user.name}}
+                            </option>
+                        </select>
+                        <div *ngIf="update" >
+                            <label class="label-input100" >FINALIZADO EM:</label>
+                            <input class="input100" name="cost" [(ngModel)]="cost" oninput="this.value=this.value.toUpperCase();"/>
+                        </div>
+                    </div>
+
+                    <button class="btn" type="button" onclick="history.back()">Voltar</button>
+                    <button class="btn" type="submit">{{update ? 'Atualizar' : 'Salvar'}}</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

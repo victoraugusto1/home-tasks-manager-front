@@ -1,1 +1,34 @@
-<p>tasks works!</p>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Lista de Tarefas</h1>
+
+        <div id="top-menu">
+            <button class="btn large" type="button" [routerLink]="['/tasks', 0]">CADASTRAR TAREFAS</button>
+        </div>
+
+        <div class="content">
+            <div class="content-body">
+                <div *ngFor="let task of tasks">
+                    <div class="detail-list wrap-input100">
+                        <div class="wrap-input100 rs2-wrap-input100">
+                            <label class="label-input100">DESCRIÇÃO</label>
+                            <span class="input100">{{task.subject}}</span>
+                        </div>
+                        <div class="wrap-input100 rs2-wrap-input100">
+                            <label class="label-input100">DATA DE VENCIMENTO</label>
+                            <span class="input100">{{task.dueDate}}</span>
+                        </div>
+                        <div class="wrap-input100 rs2-wrap-input100">
+                            <label class="label-input100">RESPONSÁVEL</label>
+                            <span class="input100">{{task.assignee}}</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

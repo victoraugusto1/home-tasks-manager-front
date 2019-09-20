@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { UsersCreateComponent } from './users-create/users-create.component';
 import { FormsModule } from '@angular/forms';
+import { TasksCreateComponent } from './tasks-create/tasks-create.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     TasksComponent,
     UsersComponent,
     MenuComponent,
-    UsersCreateComponent
+    UsersCreateComponent,
+    TasksCreateComponent
   ],
   imports: [
     BrowserModule,
