@@ -1,0 +1,22 @@
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>{{update ? 'Editar Usuário' : 'Cadastrar Novo Usuário'}}</h1>
+
+        <div class="content">
+            <div class="content-body">
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="f.form.valid && save(f)" class="form">
+                    <div class="wrap-input100 validate-input bg1">
+                        <label class="label-input100">Nome: </label>
+                        <input class="input100" name="name" [(ngModel)]="name" oninput="this.value=this.value.toUpperCase();"/>
+                    </div>
+
+                    <button class="btn" type="button" onclick="history.back()">Voltar</button>
+                    <button class="btn" type="submit">{{update ? 'Atualizar' : 'Salvar'}}</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
