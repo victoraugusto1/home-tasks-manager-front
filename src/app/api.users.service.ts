@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-const endpoint = 'https://5439655e-dc20-4ce9-ae15-5438069ac50c.mock.pstmn.io/'
+const endpoint = 'http://localhost:8080/'
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
