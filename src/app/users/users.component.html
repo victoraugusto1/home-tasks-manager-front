@@ -15,16 +15,15 @@
                 <div *ngFor="let user of users">
                     <div class="detail-list">
                         <div class="wrap-input100 rs2-wrap-input100">
-                            <label class="label-input100">ID</label>
-                            <span class="input100">{{("000000" + user.id).slice(-6)}}</span>
-                        </div>
-                        <div class="wrap-input100 rs2-wrap-input100">
-                            <label class="label-input100">NOME</label>
-                            <span class="input100">{{user.name}}</span>
-                        </div>
-                        <div class="wrap-input100 rs2-wrap-input100">
-                            <label class="label-input100">AÇÕES</label>
-                            <span class="input100"><a id="edit"><img class="link icon" src="assets/img/edit.png" alt="Edit"></a></span>
+                            <div class="username">
+                                <label class="label-input100">NOME</label>
+                                <span class="input100">{{user.name}}</span>
+                            </div>
+
+                            <div class="useractions">
+                                <label class="label-input100">AÇÕES</label>
+                                <span class="input100"><a id="edit"><img class="link icon" src="assets/img/edit.png" alt="Edit"> </a></span>
+                            </div>
                         </div>
                     </div>
                 </div>
