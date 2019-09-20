@@ -731,13 +731,3 @@ h1 {font-family: 'Mansalva';}
     }
   }
 
-/*= CUSTOM STYLE =*/
-
-.username {
-  display: inline-block;
-}
-
-.useractions {
-  display: inline-block;
-  float: right;
-}

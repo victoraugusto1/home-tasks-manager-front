@@ -1,0 +1,8 @@
+.username {
+  display: inline-block;
+}
+
+.useractions {
+  display: inline-block;
+  float: right;
+}
