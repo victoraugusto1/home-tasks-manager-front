@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiTasksService } from '../api.tasks.service';
+import { ApiUserService } from '../api.users.service';
  
 @Component({
   selector: 'app-tasks',
@@ -8,13 +9,26 @@ import { ApiTasksService } from '../api.tasks.service';
 })
 export class TasksComponent implements OnInit {
   tasks: any
+  users: any
 
-  constructor(private service: ApiTasksService) { }
+  constructor(private service: ApiTasksService, private userService: ApiUserService) { }
 
   ngOnInit() {
-    this.service.getTasks().subscribe(res => {
+    this.userService.getUsers().subscribe(res => {
       console.log(res)
-      this.tasks = res
+      this.users = res
+
+      this.service.getTasks().subscribe(res => {
+        console.log(res)
+        this.tasks = res
+      })
     })
+    
+  }
+
+  findUser(id) {
+    for (let u of this.users) {
+      if (u.id == id) return u.name 
+    }
   }
 }
